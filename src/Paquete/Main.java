@@ -5,7 +5,11 @@ import javax.swing.JOptionPane;
 public class Main {
 
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "Hola mundo");
+		
+		String nombre  = JOptionPane.showInputDialog("Ingrese nombre");
+		if (nombre.equals("Algo")) {
+			JOptionPane.showMessageDialog(null, "Hola ! ");
+		}
 
 	}
 

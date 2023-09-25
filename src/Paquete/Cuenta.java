@@ -68,8 +68,8 @@ public class Cuenta {
 		
 	}
 	
-	public void RealizarRetiro(double retiro) {
-		if (this.getSaldo()>=retiro) {
+	public void RealizarRetiro(double retiro ,  Cajero cajero) {
+		if (this.getSaldo()>=retiro && cajero.getSaldo()>retiro) {
 			
 			this.setSaldo(this.getSaldo()- retiro);
 		
@@ -79,6 +79,7 @@ public class Cuenta {
 				"\n Nuevo retiro, operacion nro:"
 				+ this.nroTransacion 
 				+" El monto fue"+ retiro);
+		cajero.setSaldo(cajero.getSaldo() - retiro);
 		}else {
 			JOptionPane.showMessageDialog(null, "No se pudo retirar");
 		}
